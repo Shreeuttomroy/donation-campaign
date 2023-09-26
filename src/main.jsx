@@ -5,6 +5,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import Donations from './components/Donations/Donations.jsx'
+import Details from './components/Details/Details.jsx'
 
 const router=createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router=createBrowserRouter([
       {
         path:"",
         element: <Home/>,
-        loader:()=> fetch("data.json"),
+        loader:()=> fetch("data.json")
       },
       {
         path:"donation",
@@ -23,6 +24,11 @@ const router=createBrowserRouter([
       {
         path:"statistics",
         element: <div>Statistic</div>
+      },
+      {
+        path:"/:id",
+        element:<Details/>,
+        loader:()=> fetch("data.json")
       }
     ]
   }
