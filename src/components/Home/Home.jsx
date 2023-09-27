@@ -1,8 +1,25 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
+// import { useState } from "react";
 
 function Home() {
+  // const [search, setSearch] = useState([]);
   const cards = useLoaderData();
+  let search = [];
+  const handleForm= e =>{
+    e.preventDefault();
+    console.log(e.target.form[0].value);
+    const searchValue = e.target.form[0].value;
+    cards.map((d)=>{
+      const cat = d.category.toLowerCase();
+      const sear = searchValue.toLowerCase();
+      if(cat == sear){
+        // search = [];
+        search.push(d);
+      }
+    })
+  }
+  console.log(search);
   return (
     <>
       <div className="w-full h-[500px] relative">
@@ -17,9 +34,7 @@ function Home() {
                   className=" w-fit h-fit py-2 px-4 bg-[#FFFFFF] border-2 border-[#DEDEDE] rounded-tl-lg rounded-bl-lg"
                   type="text" placeholder="Search...."
                 />
-                <button className=" bg-[#FF444A] text-white py-2 text-lg px-4">
-                  Search
-                </button>
+                <button onClick={handleForm} type="submit" className=" bg-[#FF444A] text-white py-2 text-lg px-4">Search</button>
               </form>
             </div>
           </div>
@@ -33,7 +48,10 @@ function Home() {
           }}></div>
       </div>
       <div className=" mx-auto justify-center my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {cards?.map((card) => <Card key={card.id} card={card}/>)}
+        {search>0?
+          search.map((card) => <Card key={card.id} card={card}/>):
+          cards?.map((card) => <Card key={card.id} card={card}/>)
+          }
       </div>
     </>
   );
