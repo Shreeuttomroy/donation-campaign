@@ -8,7 +8,7 @@ function Header() {
     <div className="w-full overflow-x-hidden flex h-20 justify-between">
       <img
         className=" w-32 h-11 md:w-44 md:h-13 mx-2 md:mx-6 my-auto"
-        src="../src/assets/Logo.png"
+        src="./src/assets/Logo.png"
         alt="Donation"
       />
       <div className="">

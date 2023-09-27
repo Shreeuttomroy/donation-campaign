@@ -42,7 +42,7 @@ function Home() {
         <div
           className=" -z-10 opacity-5 w-full h-full absolute top-0"
           style={{
-            backgroundImage: "url('../src/assets/Clothing.png')",
+            backgroundImage: "url('./src/components/Home/Clothing.png')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}></div>
