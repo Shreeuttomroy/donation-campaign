@@ -6,18 +6,14 @@ function Details(){
   const [donate, setDontae] = useState({});
 
   const { id } = useParams();
-  console.log(id);
 
   const donateDatas = useLoaderData();
-  console.log(donateDatas);
   useEffect(() => {
 
     
     const donateData = donateDatas?.find((d) => d.id == id);
-    console.log(donateData);
     setDontae(donateData);
   }, [id, donateDatas]);
-  console.log(donate);
 
   return (
     <div>

@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import Donations from './components/Donations/Donations.jsx'
 import Details from './components/Details/Details.jsx'
+import Chart from './components/Chart/Chart.jsx'
 
 const router=createBrowserRouter([
   {
@@ -23,7 +24,8 @@ const router=createBrowserRouter([
       },
       {
         path:"statistics",
-        element: <div>Statistic</div>
+        element: <Chart/>,
+        loader:()=> fetch("data.json")
       },
       {
         path:"/:id",

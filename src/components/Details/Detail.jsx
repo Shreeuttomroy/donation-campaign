@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import swal from "sweetalert";
 
 function Detail({ donate }) {
-  console.log(donate);
   const { id, color, img, title, price, desc } = donate;
   const bgcolor = { backgroundColor: color };
   const arr = [];
@@ -12,12 +11,11 @@ function Detail({ donate }) {
     if (!Cards) {
       arr.push(donate);
       localStorage.setItem("cards", JSON.stringify(arr));
-      swal("Good job!", "Thanks for your donation!");
+      swal("Thanks for your donation!");
       if (arr.length>0) {
         arr.map((d) => {
           totalDonate += parseInt(d.price);
-        });
-        console.log(totalDonate)
+        })
     }
     localStorage.setItem("totalDonate",totalDonate)
     } else {
@@ -25,16 +23,15 @@ function Detail({ donate }) {
       if (!isExits) {
         arr.push(...Cards, donate);
         localStorage.setItem("cards", JSON.stringify(arr));
-        swal("Good job!", "Thanks for your donation!");
+        swal("Thanks for your donation!");
         if (arr.length>0) {
             arr.map((d) => {
               totalDonate += parseInt(d.price);
             });
-            console.log(totalDonate)
         }
         localStorage.setItem("totalDonate",totalDonate)
       } else {
-        swal("Error!", "Already, You are donated!");
+        swal("Already, You are donated!");
       }
     }
 

@@ -1,11 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
-// import { useState } from "react";
 
 function Home() {
-  // const {cardses,setCard} = useState([]);
   const cards = useLoaderData();
-  // console.log(cards);
   return (
     <>
       <div className="w-full h-[500px] relative">
