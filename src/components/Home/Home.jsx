@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
+import Clothing from "./Clothing.png"
 // import { useState } from "react";
 
 function Home() {
@@ -42,7 +43,7 @@ function Home() {
         <div
           className=" -z-10 opacity-5 w-full h-full absolute top-0"
           style={{
-            backgroundImage: "url('./src/components/Home/Clothing.png')",
+            backgroundImage: `url(${Clothing})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}></div>

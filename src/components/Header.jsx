@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Logo from "./Logo.png"
 
 function Header() {
   const [btn, setBtn] = useState(true);
@@ -8,7 +9,7 @@ function Header() {
     <div className="w-full overflow-x-hidden flex h-20 justify-between">
       <img
         className=" w-32 h-11 md:w-44 md:h-13 mx-2 md:mx-6 my-auto"
-        src="./src/assets/Logo.png"
+        src={Logo}
         alt="Donation"
       />
       <div className="">
