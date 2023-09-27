@@ -33,7 +33,7 @@ function Donations() {
               Delete All
             </button>
           </div>
-          <div className=" mx-auto my-8 grid grid-cols-2">
+          <div className=" mx-auto my-8 grid grid-cols-1 md:grid-cols-2">
             {isShow
               ? Donations.map((d) => <Donation key={d.id} d={d} />)
               : Donations.slice(0, 4).map((d) => <Donation key={d.id} d={d} />)}
